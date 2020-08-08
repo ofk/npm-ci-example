@@ -1,4 +1,6 @@
 function sum(...values) {
-  return values.reduce(function (acc, cur) { return acc + cur });
+  return values.reduce(function calc(acc, cur) {
+    return acc + cur;
+  });
 }
 module.exports = sum;
