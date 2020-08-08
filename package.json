@@ -14,8 +14,8 @@
     "format:scripts": "npm run lint:scripts -- --fix",
     "format": "run-p format:*",
     "typecheck": "tsc --noEmit",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ci": "run-s typecheck lint test"
+    "test": "jest",
+    "ci": "run-s lint test"
   },
   "devDependencies": {
     "@ofk/eslint-config-recommend": "^1.0.2",
