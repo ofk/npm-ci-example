@@ -36,7 +36,8 @@
     },
     "extends": [
       "@ofk/eslint-config-recommend",
-      "@ofk/eslint-config-recommend/best-practices"
+      "@ofk/eslint-config-recommend/best-practices",
+      "plugin:jest/recommended"
     ]
   },
   "stylelint": {
