@@ -1,0 +1,43 @@
+{
+  "name": "npm-ci-example",
+  "private": true,
+  "license": "CC0-1.0",
+  "author": "ofk <ofkjpn+npm@gmail.com> (https://github.com/ofk/)",
+  "main": "index.js",
+  "scripts": {
+    "lint:files": "prettier -c '**/*.{gql,graphql,html,json,less,markdown,md,mdown,mdx,mkdn,vue,yaml,yml}'",
+    "lint:styles": "stylelint --aei 'src/**/*.{css,scss}'",
+    "lint:scripts": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint": "run-p lint:*",
+    "format:files": "npm run lint:files -- --write",
+    "format:styles": "npm run lint:styles -- --fix",
+    "format:scripts": "npm run lint:scripts -- --fix",
+    "format": "run-p format:*",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ci": "run-s typecheck lint test"
+  },
+  "devDependencies": {
+    "@ofk/eslint-config-recommend": "^1.0.2",
+    "@ofk/stylelint-config-recommend": "^1.0.0",
+    "eslint": "^7.6.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
+    "typescript": "^3.9.7"
+  },
+  "prettier": "@ofk/eslint-config-recommend/.prettierrc",
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "@ofk/eslint-config-recommend",
+      "@ofk/eslint-config-recommend/best-practices"
+    ]
+  },
+  "stylelint": {
+    "extends": "@ofk/stylelint-config-recommend"
+  }
+}
